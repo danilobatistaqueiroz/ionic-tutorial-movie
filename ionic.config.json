@@ -1,0 +1,7 @@
+{
+  "name": "whatsclone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
