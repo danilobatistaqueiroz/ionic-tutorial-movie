@@ -24,3 +24,12 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: "Fredoka";
+  src: local("Fredoka"), url(./assets/fonts/Fredoka/Fredoka-VariableFont_wdth-wght.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Fredoka.bold.semiexpanded';
+  src: local('Fredoka_SemiExpanded-Bold'), url(./assets/fonts/Fredoka/static/Fredoka_SemiExpanded-Bold.ttf) format("truetype");
+}

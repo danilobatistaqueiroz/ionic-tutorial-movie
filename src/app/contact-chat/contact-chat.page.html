@@ -1,0 +1,30 @@
+<ion-header [translucent]="true" style="height:70px;">
+  <ion-toolbar style="height:70px">
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <div style="display:flex;justify-content:space-between;">
+      <div>
+        <img class="logo" src="assets/avatars/{{contact.img}}"/>
+      </div>
+      <div style="margin-top:0.8rem;margin-left:0rem;flex-grow:2;">
+          <div class="title">{{contact.name}}</div>
+          <div>visto por último em 01/05/2023</div>
+      </div>
+      <div style="margin-top:0.8rem;">
+        <ion-button fill="clear" color="medium"><ion-icon name="musical-notes-outline"></ion-icon></ion-button>
+        <ion-button id="popover-button" fill="clear" color="medium"><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<!-- list of contacts and messages -->
+<div id="content">
+  <ul *ngFor="let msg of messages;">
+    <li>
+      
+    </li>
+  </ul>
+</div>
+<!-- list of contacts and messages -->

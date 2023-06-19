@@ -1,0 +1,27 @@
+<ion-header [translucent]="true" style="height:70px;">
+  <ion-toolbar style="height:70px">
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <div>
+      <div style="float:left;margin-top:0.8rem;margin-left:1.5rem;">
+          <div class="title">Contatos</div>
+          <div>{{contacts.length}} contatos</div>
+      </div>
+      <div style="float:right;margin-top:0.8rem;">
+        <ion-button fill="clear" color="medium"><ion-icon name="search-outline"></ion-icon></ion-button>
+        <ion-button id="popover-button" fill="clear" color="medium"><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<!-- list of contacts and messages -->
+<div id="content">
+  <ul [ngClass]="contact.active?'fades':''" *ngFor="let contact of contacts;">
+    <li (click)="selectContact(contact)">
+      <img src="assets/avatars/{{contact.img}}"/><div>{{contact.name}}</div>
+    </li>
+  </ul>
+</div>
+<!-- list of contacts and messages -->

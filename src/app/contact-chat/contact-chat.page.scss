@@ -1,0 +1,94 @@
+
+/** largura de tela **/
+.page, ion-header, ion-content, #content {
+  max-width:500px;
+  margin:auto;
+}
+@media screen and (max-width: 500px) {
+  .page, ion-header, ion-content, #content {
+    max-width:100%;
+    min-width:100%;
+  }
+}
+/** largura de tela **/
+
+
+
+
+/** header, tabs **/
+@media screen and (max-width: 400px) {
+  .tabs ion-button {
+    font-size:10px;
+  }
+  ion-header ion-title {
+    font-size:15px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .tabs ion-col {
+    display:block !important;
+    padding-right:0px !important;
+  }
+  .tabs ion-button {
+    font-size:15px;
+  }
+  ion-header ion-title {
+    font-size:15px;
+    padding-inline-start:10px;
+    padding-inline-end:0px;
+  }
+  ion-header .icons ion-button {
+    font-size:12px;
+    padding:0px;
+    margin:0px;
+  }
+  ion-header, ion-toolbar {
+    height:145px !important;
+  }
+}
+/** header, tabs **/
+
+.title {
+  font-weight:bolder;
+}
+
+
+
+
+/** list of messages **/
+#content {
+  width:500px;
+  min-height:100%;
+  overflow: auto;
+}
+#content li {
+  cursor:pointer;
+}
+#content li img {
+  width:2rem; margin-right:1rem;
+}
+#content ul {
+  list-style-type: none; border-radius:3px;
+  padding-top:0.3rem; padding-left:0.1rem;
+}
+#content li {
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  border-radius:3px; padding-left:0.3rem;
+}
+#content div {
+  display:inline;
+}
+.fades {
+  animation: fading 0.3s linear forwards;
+}
+@keyframes fading {
+  from{background-color:#121212}
+  50%{background-color:#5b9999}
+  to{background-color:#121212}
+}
+/** list of messages **/
+
+.logo {
+  width:2rem; margin-right:1rem;
+  margin-top:1rem;
+}
