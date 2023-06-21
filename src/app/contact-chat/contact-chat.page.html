@@ -23,8 +23,19 @@
 <div id="content">
   <ul *ngFor="let msg of messages;">
     <li>
-      
+      <div [ngStyle]="{'text-align':msg.owner=='I'?'right':'left'}">{{msg.txt}}</div>
     </li>
   </ul>
 </div>
 <!-- list of contacts and messages -->
+
+<div class="float-button">
+  <div class="float-line">
+    <div style="width:auto"></div>
+    <div class="center-block">
+      <ion-img class="button-new-message" [src]="msg" (click)="newMessage();">
+      </ion-img>
+    </div>
+    <div style="width:auto"></div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<ion-tabs>
+  <ion-tab-bar slot="top" style="height:100px;" [ngStyle]="preferences.isFirstAccess?{'z-index':'-1'}:{}">
+    <ion-grid>
+      <ion-row class="icons ion-justify-content-between" style="padding-top:15px;">
+        <ion-col size="4" style="padding: 15px 0">
+          <ion-title>
+            <ion-label color="medium">Digae</ion-label>
+          </ion-title>
+        </ion-col>
+        <ion-col size="6" style="text-align:right">
+          <ion-button fill="clear" color="medium"><ion-icon name="camera-outline"></ion-icon></ion-button>
+          <ion-button fill="clear" color="medium"><ion-icon name="search-outline"></ion-icon></ion-button>
+          <ion-button id="popover-button" fill="clear" color="medium"><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="tabs">
+        <ion-col style="display:flex;justify-content:space-between;padding-right:10px;">
+          <ion-tab-button fill="clear" color="medium" style="padding-bottom:8px;"><ion-icon name="people-sharp"></ion-icon></ion-tab-button>
+          <ion-tab-button tab="chats" fill="clear" size="small" color="medium">Conversas<ion-badge slot="end" color="success" style="border-radius:12px;">11</ion-badge></ion-tab-button>
+          <ion-tab-button tab="status" fill="clear" size="small" color="medium">Status</ion-tab-button>
+          <ion-tab-button id="chamadas" name="chamadas" tab="calls" fill="clear" size="small" color="medium">Chamadas</ion-tab-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-tab-bar>
+</ion-tabs>
+
+
+<!-- ellipsis menu -->
+<ion-popover trigger="popover-button" [dismissOnSelect]="true" side="bottom" alignment="end">
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item [button]="true" [detail]="false">Novo grupo</ion-item>
+        <ion-item [button]="true" [detail]="false">Mensagens favoritas</ion-item>
+        <ion-item [button]="true" [detail]="false">Pagamentos</ion-item>
+        <ion-item [button]="true" [detail]="false">Configurações</ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+<!-- ellipsis menu -->
+
+<ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen=false">
+  <ng-template>
+    <ion-content class="ion-padding">{{tutorialText}}</ion-content>
+  </ng-template>
+</ion-popover>

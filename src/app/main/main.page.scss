@@ -1,0 +1,74 @@
+
+/** header, tabs **/
+@media screen and (max-width: 400px) {
+  ion-tab-button, ion-button {
+    font-size:13px;
+  }
+  ion-title {
+    font-size:15px;
+  }
+}
+@media screen and (max-width: 330px) {
+  ion-col {
+    display:block !important;
+    padding-right:0px !important;
+  }
+  ion-tab-button, ion-button {
+    font-size:11px;
+  }
+  ion-title {
+    font-size:15px;
+    padding-inline-start:10px;
+    padding-inline-end:0px;
+  }
+  ion-button {
+    font-size:12px;
+    padding:0px;
+    margin:0px;
+  }
+}
+ion-badge {
+  margin-left:0.3rem;
+}
+/** header, tabs **/
+
+
+
+
+
+/** largura de tela **/
+ion-tabs, ion-content {
+  max-width:500px;
+  margin:auto;
+}
+@media screen and (max-width: 500px) {
+  ion-tabs, ion-content {
+    max-width:100%;
+    min-width:100%;
+  }
+}
+/** largura de tela **/
+
+
+
+/** header, tabs **/
+ion-badge {
+  margin-left:0.3rem;
+}
+/** header, tabs **/
+
+
+
+ion-tab-button {
+  --color-selected:#0abd51;
+  --color-focused:#0abd51;
+  font-weight:bolder;
+}
+
+
+
+
+
+ion-content {
+  width:100%;
+}

@@ -6,6 +6,21 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+    children: [
+      {
+        path: 'contacts',
+        loadChildren: () => import('../contacts/contacts.module').then(m => m.ContactsPageModule)
+      },
+      {
+        path: 'calls',
+        loadChildren: () => import('../main/calls/calls.module').then(m => m.CallsPageModule)
+      },
+      {
+        path: '',
+        redirectTo: '/contacts',
+        pathMatch: 'full'
+      }
+    ]
   }
 ];
 

@@ -1,0 +1,21 @@
+<!-- list of contacts and messages -->
+<div id="content" [ngStyle]="preferences.isFirstAccess?{overflow:'hidden'}:{overflow:'auto'}">
+  <ul [ngClass]="chat.active?'fades':''" [ngClass]="chat.unread?'unread':''" style="z-index:-1" *ngFor="let chat of chats;">
+    <li (click)="selectChat(chat)">
+      <img src="assets/avatars/{{chat.img}}"/><div>{{chat.msg}}</div>
+    </li>
+  </ul>
+</div>
+<!-- list of contacts and messages -->
+
+
+<div class="float-button">
+  <div class="float-line">
+    <div style="width:auto"></div>
+    <div class="center-block">
+      <ion-img class="button-new-message" [src]="msg" (click)="newMessage();">
+      </ion-img>
+    </div>
+    <div style="width:auto"></div>
+  </div>
+</div>

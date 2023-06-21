@@ -1,0 +1,28 @@
+<!-- list of contacts and messages -->
+<div id="content">
+  <ul [ngClass]="call.active?'fades':''" [ngClass]="call.unread?'unread':''" style="z-index:-1" *ngFor="let call of calls;">
+    <li (click)="selectCall(call)" style="height:45px;">
+      <div style="display:flex;flex-direction:row;justify-content:space-between;">
+        <div style="align-self:center">
+          <img src="assets/avatars/{{call.img}}"/>
+        </div>
+        <div style="display:flex;flex-direction:column;flex-grow:1">
+          <div style="font-weight:bolder;color:antiquewhite">
+            {{call.name}}
+          </div>
+          <div>
+            <ion-icon [ngStyle]="{'color':call.status=='success'?'green':'red'}" [name]="call.direction=='receive'?'arrow-up-outline':'arrow-down-outline'"/>{{call.date}}
+          </div>
+        </div>
+        <div style="margin-right:0.8rem;align-self:center">
+          <ion-button id="present-alert" (click)="presentAlert(call)" fill="clear">
+            <ion-icon name="call-outline" style="color:green"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- list of contacts and messages -->
+
+

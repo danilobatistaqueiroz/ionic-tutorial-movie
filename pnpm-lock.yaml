@@ -55,6 +55,9 @@ dependencies:
   bootstrap:
     specifier: ^5.2.3
     version: 5.2.3(@popperjs/core@2.11.8)
+  contacts:
+    specifier: link:/home/element/dados/tutorials/ionic/plugins/contacts
+    version: link:../../../../home/element/dados/tutorials/ionic/plugins/contacts
   ionicons:
     specifier: ^7.0.0
     version: 7.1.2

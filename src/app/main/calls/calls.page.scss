@@ -1,0 +1,36 @@
+/** list of messages **/
+#content {
+  width:100%;
+  max-width:500px;
+  margin:auto !important;
+}
+#content li {
+  cursor:pointer;
+}
+#content li img {
+  width:2rem; margin-right:1rem;
+}
+#content ul {
+  list-style-type: none; border-radius:3px;
+  padding-top:0.3rem; padding-left:0.1rem;
+}
+#content li {
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  border-radius:3px; padding-left:0.3rem;
+}
+.fades {
+  animation: fading 0.3s linear forwards;
+}
+@keyframes fading {
+  from{background-color:#121212}
+  50%{background-color:#5b9999}
+  to{background-color:#121212}
+}
+.unread {
+  background-color:#5b9999;
+}
+/** list of messages **/
+
+#content {
+  overflow:auto !important;
+}
