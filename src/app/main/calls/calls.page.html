@@ -14,8 +14,8 @@
             <ion-icon [ngStyle]="{'color':call.status=='success'?'green':'red'}" [name]="call.direction=='receive'?'arrow-up-outline':'arrow-down-outline'"/>{{call.date}}
           </div>
         </div>
-        <div style="margin-right:0.8rem;align-self:center">
-          <ion-button id="present-alert" (click)="presentAlert(call)" fill="clear">
+        <div style="margin-right:0.8rem;align-self:center" class="present-alert">
+          <ion-button (click)="presentAlert(call)" fill="clear">
             <ion-icon name="call-outline" style="color:green"></ion-icon>
           </ion-button>
         </div>
@@ -23,6 +23,5 @@
     </li>
   </ul>
 </div>
+<button type="button" id="btHiddenDetailCall" placement="left" ngbPopover={{tutoPopovers.txtDetailCall}} ></button>
 <!-- list of contacts and messages -->
-
-

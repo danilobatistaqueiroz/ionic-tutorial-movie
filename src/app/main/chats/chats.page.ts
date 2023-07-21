@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { PreferencesService } from '../../services/preferences.service';
-import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { PopoverController } from '@ionic/angular';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { Chat } from 'src/app/models/chat';
 import { ChatsService } from 'src/app/services/chats.service';
+import { environment } from 'src/environments/environment';
+import { TutoPopovers } from 'src/app/tutorial/tuto-popovers';
 
 @Component({
   selector: 'app-chats',
@@ -22,6 +23,8 @@ export class ChatsPage implements OnInit, AfterViewInit {
 
   msg = '/assets/icon/message-square.svg';
 
+  tutorialText:string='';
+
   isOpen = false;
 
   allFade:boolean[]=[];
@@ -33,7 +36,7 @@ export class ChatsPage implements OnInit, AfterViewInit {
   checkedFire:boolean=true;
   checkedMoney:boolean=false;
 
-  constructor(public preferences: PreferencesService, private modalService: NgbModal, private router: Router, private chatsService:ChatsService) { }
+  constructor(public tutoPopovers: TutoPopovers, private modalService: NgbModal, private router: Router, private chatsService:ChatsService) { }
 
   ngAfterViewInit(): void {
     setTimeout(()=>this.page=1,1300);
@@ -45,11 +48,6 @@ export class ChatsPage implements OnInit, AfterViewInit {
     });
   }
 
-  close() {
-    this.preferences.setFirstAccess('false');
-    //setTimeout(()=>this.open(''),2000);
-  }
-
   newMessage(){
     this.router.navigate(['contacts']);
   }
@@ -59,11 +57,13 @@ export class ChatsPage implements OnInit, AfterViewInit {
   }
 
   selectChat(chat:Chat){
-    chat.active=true;
-    setTimeout(()=>{
-      chat.active=false;
-      this.router.navigate(['contact-chat',chat.id]);
-    },500);
+    if(!this.tutoPopovers.isTutorial()){
+      chat.active=true;
+      setTimeout(()=>{
+        chat.active=false;
+        this.router.navigate(['contact-chat',chat.id]);
+      },500);
+    }
   }
 
   checkTrash(){

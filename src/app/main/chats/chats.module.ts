@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ChatsPageRoutingModule } from './chats-routing.module';
-
+import { NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChatsPage } from './chats.page';
 
 @NgModule({
@@ -13,6 +13,7 @@ import { ChatsPage } from './chats.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    NgbPopoverModule,
     ChatsPageRoutingModule
   ],
   declarations: [ChatsPage]

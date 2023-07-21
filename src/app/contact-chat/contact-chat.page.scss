@@ -2,6 +2,7 @@
 /** largura de tela **/
 .page, ion-header, ion-content, #content {
   max-width:500px;
+  width:100%;
   margin:auto;
 }
 @media screen and (max-width: 500px) {
@@ -16,7 +17,10 @@
 
 
 /** header, tabs **/
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
+  .visto-por-ultimo {
+    font-size:11px;
+  }
   .tabs ion-button {
     font-size:10px;
   }

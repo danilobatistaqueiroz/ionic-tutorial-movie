@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { PreferencesService } from '../services/preferences.service';
-import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { PopoverController } from '@ionic/angular';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { TutoPopovers } from '../tutorial/tuto-popovers';
 
 @Component({
   selector: 'app-main',
@@ -62,18 +62,20 @@ export class MainPage implements OnInit, AfterViewInit {
   checkedFire:boolean=true;
   checkedMoney:boolean=false;
 
-  constructor(public preferences: PreferencesService, private modalService: NgbModal, private router: Router) { }
+  constructor(public tutoPopovers: TutoPopovers, private modalService: NgbModal, private router: Router) { }
 
   ngAfterViewInit(): void {
     setTimeout(()=>this.page=1,1300);
   }
 
   ngOnInit(): void {
-    setTimeout(()=>this.presentPopover(),1000);
   }
 
-  close() {
-    this.preferences.setFirstAccess('false');
+  tutoImg:string="assets/tutorial/avatar.png";
+
+  closeConfigurations() {
+    this.tutoPopovers.finishConfiguration();
+    setTimeout(()=>this.tutoPopovers.initTutorial(),1000);
     //setTimeout(()=>this.open(''),2000);
   }
 
@@ -82,7 +84,11 @@ export class MainPage implements OnInit, AfterViewInit {
   }
 
   next(){
-    this.page=2;
+    this.page+=1;
+  }
+
+  isSlide(page:number){
+    return (this.tutoPopovers.isFirstConfiguration() && this.page==page);
   }
 
   selectChat(avatar:any){
@@ -127,32 +133,4 @@ export class MainPage implements OnInit, AfterViewInit {
     }
   }
 
-  presentPopover() {
-    let origin = document.getElementsByName('chamadas')[0];
-    let top = this.getOffset(origin).top;
-    let left = this.getOffset(origin).left;
-    let bt = document.createElement('button');
-    bt.style.top = (top+10)+'px';
-    bt.style.left = (left+30)+'px';
-    bt.style.position = 'fixed';
-    bt.style.visibility = 'hidden';
-    bt.innerHTML = 'OK';
-    bt.addEventListener('click',ev => {
-      this.popover.event = ev;
-      this.popover.trigger='left-start';
-      this.popover.side='left';
-      this.tutorialText='Histórico das chamadas';
-      this.isOpen = true;
-    })
-    document.body.appendChild(bt);
-    bt.click();
-  }
-
-  getOffset(el:any) {
-    const rect = el.getBoundingClientRect();
-    return {
-      left: rect.left + window.scrollX,
-      top: rect.top + window.scrollY
-    };
-  }
 }

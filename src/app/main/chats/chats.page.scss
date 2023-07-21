@@ -1,6 +1,7 @@
 /** list of messages **/
 #content {
-  width:500px;
+  max-width:500px;
+  width:100%;
   margin:auto !important;
 }
 #content li {
@@ -36,10 +37,10 @@
 
 
 /** float new message button **/
-.float-button {
+.float-row {
   position:fixed;bottom:20px;width:100%;
 }
-.float-line {
+.float-flex {
   display:flex;align-items:end;justify-content:space-between;
 }
 .center-block {

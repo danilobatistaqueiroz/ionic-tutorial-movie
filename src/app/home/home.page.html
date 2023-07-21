@@ -1,5 +1,5 @@
 <!-- first access -->
-<div id="pageFirstAccess1" class="page" [ngStyle]="preferences.isFirstAccess?{}:{display:'none'}" style="padding-top:-50px;z-index:1"
+<div id="pageFirstAccess1" class="page" [ngStyle]="preferences.isFirstConfiguration?{}:{display:'none'}" style="padding-top:-50px;z-index:1"
 [ngClass]="page==1?'firstPageSlide':''">
   <ion-img src="assets/screens/first-access/background.png" style="width:100%"/>
   <ion-img src="assets/screens/first-access/x.png" style="width:6%;position:absolute;top:10px;right:10px" (click)="close()"/>
@@ -10,7 +10,7 @@
   </div>
   <ion-img src="assets/screens/first-access/arrow-next.png" style="width:8%;position:absolute;bottom:10px;right:10px" (click)="next()"/>
 </div>
-<div id="pageFirstAccess2" class="page" [ngStyle]="preferences.isFirstAccess?{}:{display:'none'}" style="padding-top:-50px"
+<div id="pageFirstAccess2" class="page" [ngStyle]="preferences.isFirstConfiguration?{}:{display:'none'}" style="padding-top:-50px"
 [ngClass]="page==2?'pageSlide':''">
   <ion-img src="assets/screens/first-access/background.png" style="width:100%"/>
   <ion-img src="assets/screens/first-access/x.png" style="width:6%;position:absolute;top:10px;right:10px" (click)="close()"/>
@@ -31,7 +31,7 @@
 <!-- first access -->
 
 
-<ion-header [translucent]="true" style="height:95px;" [ngStyle]="preferences.isFirstAccess?{'z-index':'-1'}:{}">
+<ion-header [translucent]="true" style="height:95px;" [ngStyle]="preferences.isTutorial?{'z-index':'-1'}:{}">
   <ion-toolbar style="height:95px">
     <ion-grid>
       <ion-row class="icons ion-justify-content-between" style="padding-top:15px;">
@@ -60,7 +60,7 @@
 
 
 <!-- list of contacts and messages -->
-<div id="content" [ngStyle]="preferences.isFirstAccess?{overflow:'hidden'}:{overflow:'auto'}">
+<div id="content" [ngStyle]="preferences.isTutorial?{overflow:'hidden'}:{overflow:'auto'}">
   <ul [ngClass]="avatar.active?'fades':''" [ngClass]="avatar.unread?'unread':''" style="z-index:-1" *ngFor="let avatar of avatars;">
     <li (click)="selectChat(avatar)">
       <img src="assets/avatars/{{avatar.img}}"/><div>{{avatar.txt}}</div>

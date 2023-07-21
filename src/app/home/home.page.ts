@@ -72,7 +72,7 @@ export class HomePage implements OnInit, AfterViewInit {
   }
 
   close() {
-    this.preferences.setFirstAccess('false');
+    this.preferences.setTutorial('false');
     //setTimeout(()=>this.open(''),2000);
   }
 

@@ -1,6 +1,13 @@
 ionic start whatsclone blank --type=angular --capacitor --project-id=whatsclone --package-id=br.labs.whatsclone
 
 
+balloons melhor que popovers:  
+https://kazzkiq.github.io/balloon.css/
+tooltip com close button:  
+http://jsfiddle.net/YM84U/19/
+
+
+
 pnpm i @capacitor/preferences
 
 Entrei no site:  

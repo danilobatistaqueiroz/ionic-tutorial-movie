@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { CallsService } from './services/calls.service';
 import { ChatsService } from './services/chats.service';
+import { TutoPopovers } from './tutorial/tuto-popovers';
 
 export function initializeFactory(init: PreferencesService) {
   return () => init.InitializeFirstAccess();
@@ -26,6 +27,7 @@ export function initializeFactory(init: PreferencesService) {
     ContactsService,
     CallsService,
     ChatsService,
+    TutoPopovers,
     { provide: APP_INITIALIZER,
       useFactory: initializeFactory,
       deps: [PreferencesService],
