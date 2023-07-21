@@ -1,5 +1,5 @@
 
-[![screen-shot](https://user-images.githubusercontent.com/32627919/255275735-c033f65d-1a69-4b70-aa7c-1f16c5d76d77.png)(https://user-images.githubusercontent.com/32627919/255270715-8e4fe8a2-3b25-49ca-81fa-3d94c73ddcca.mp4)]
+[![screen-shot](https://user-images.githubusercontent.com/32627919/255275735-c033f65d-1a69-4b70-aa7c-1f16c5d76d77.png)](https://user-images.githubusercontent.com/32627919/255270715-8e4fe8a2-3b25-49ca-81fa-3d94c73ddcca.mp4)
 
 ionic start whatsclone blank --type=angular --capacitor --project-id=whatsclone --package-id=br.labs.whatsclone
 
